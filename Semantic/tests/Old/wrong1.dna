@@ -1,0 +1,10 @@
+def main is int
+
+    var 1x is int
+    x := _@
+    loop:
+        x := x+1
+        if x=5: break
+
+    writeInteger: '3'
+    return: 0

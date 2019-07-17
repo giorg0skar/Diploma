@@ -1,0 +1,48 @@
+def erat
+
+   var count i n is int
+   var mark is byte[1001]
+
+begin
+   count := 0
+   
+   i := 0
+   loop:
+   begin
+      if i > 1000:
+      begin
+        break
+      end
+      mark[i] := true
+      i := i+1
+   end
+
+   n:=2
+   loop:
+   begin
+      if n > 1000:
+      begin
+        break
+      end
+      if mark[n]:
+      begin
+         count := count+1
+         writeInteger: n
+         writeString: "\t"
+         i:=n
+         loop:
+         begin
+            if i > 1000:
+            begin
+              break
+            end
+            mark[i] := false
+            i := i+n
+         end
+      end
+      n:=n+1
+   end
+   writeString: "\n\n"
+   writeInteger: count
+   writeString: " prime number(s) found\n"
+end

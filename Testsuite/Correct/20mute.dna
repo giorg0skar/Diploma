@@ -1,0 +1,18 @@
+def main
+
+  var x is int
+   
+  def f is int: n as int
+    var s i is int
+    s := 0
+    i := 1
+    loop:
+      if i > n: break
+      s := s + i
+      i := i + 1
+    return: s
+
+  x := 6
+  x := f(x) + f(f(3))
+  writeInteger: x
+  writeString: "\n"

@@ -1,0 +1,4 @@
+def main
+    def h: n as int
+        writeInteger: n
+    h: 5

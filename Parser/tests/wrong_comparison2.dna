@@ -1,0 +1,5 @@
+def main is int
+    var x is byte
+    x := 'a'
+    if x <> 5: skip
+    return: 0

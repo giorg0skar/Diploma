@@ -1,0 +1,34 @@
+def divis
+   var n lcv is int
+   var flag is byte
+begin
+   writeString: "Number to find the divisors of: "
+   n := readInteger()
+   lcv := 2
+   flag := true
+   loop:
+   begin
+      if lcv > n / 2:
+      begin
+        break
+      end
+      if n % lcv = 0:
+      begin
+         if flag:
+         begin
+            writeString: "The non-trivial divisors of "
+            writeInteger: n
+            writeString: " are: \n"
+         end
+         flag := false
+         writeInteger: lcv
+         writeChar: '\n'
+      end
+      lcv := lcv + 1
+   end
+   if flag:
+   begin
+      writeInteger: n
+      writeString: " is prime\n"
+   end
+end

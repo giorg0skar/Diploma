@@ -1,0 +1,17 @@
+def main is int
+
+    def g is int: a b as int
+        var xx is byte
+        def h
+            def f is int
+                return: g(2,8)
+            skip
+
+        return: a + b
+
+    var x is int
+
+    #writeString: "hello world"
+    #x := g ( 3, 5 )
+    return: 0
+    #return: x

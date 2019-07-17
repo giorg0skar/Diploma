@@ -1,0 +1,7 @@
+def main is int
+    var a b c d is int
+    a := 1
+    b := 3
+    c := a / b
+    d := a % b
+    return: 0

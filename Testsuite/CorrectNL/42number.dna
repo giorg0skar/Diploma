@@ -1,0 +1,36 @@
+def number
+   var i j k is int
+begin
+   i := 1
+   loop:
+   begin
+      if i >= 10:
+      begin
+        break
+      end
+      j := 0
+      loop:
+      begin
+         if j >= 10:
+         begin
+           break
+         end
+         k := 0
+         loop:
+         begin
+            if k >= 10:
+            begin
+              break
+            end
+            if 100*i + 10*j + k = i*i*i +j*j*j +k*k*k:
+            begin
+               writeInteger: 100*i+10*j+k
+               writeString: "\n"
+            end
+            k := k+1
+         end
+         j := j+1
+      end
+      i := i+1
+   end
+end

@@ -1,0 +1,15 @@
+def main
+
+  def f is int: x as int
+  begin
+    if x<0:
+    begin
+      exit
+    end
+    return: x+1
+  end
+
+begin
+  writeInteger: f(5)
+  writeString: "\nThis program is wrong!\n"
+end

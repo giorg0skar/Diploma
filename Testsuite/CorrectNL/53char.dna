@@ -1,0 +1,7 @@
+def ch
+   var c is byte
+begin
+   c := shrink(42)
+   writeInteger: extend(c)
+   writeChar: shrink(10)
+end

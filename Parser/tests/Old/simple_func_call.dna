@@ -1,0 +1,6 @@
+def main
+    def f1 is int
+        return: 5
+    var x is int
+    x := f1()
+    skip

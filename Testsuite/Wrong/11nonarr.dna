@@ -1,0 +1,4 @@
+def main
+   var a is int
+   a[5] := a[5]
+   writeString: "\nThis program is wrong!\n"

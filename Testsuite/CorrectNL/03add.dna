@@ -1,0 +1,8 @@
+def add
+   var x y is int
+begin
+   x := 14
+   y := 28
+   writeInteger: x + y
+   writeString: "\n"
+end

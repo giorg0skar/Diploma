@@ -1,0 +1,6 @@
+def main is int
+    var a b c is int
+    a := 1 & 5
+    b := 1 | 5
+    c := !a
+    return: c

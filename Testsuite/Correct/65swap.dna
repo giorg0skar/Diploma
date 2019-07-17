@@ -1,0 +1,16 @@
+def sw
+
+   def swap: a b as ref int
+      var t is int
+      t := a
+      a := b
+      b := t
+
+   var x y is int
+
+   x := 2
+   y := 4
+   swap: x, y
+   writeInteger: x
+   writeInteger: y
+   writeString: "\n"

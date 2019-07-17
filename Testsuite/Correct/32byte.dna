@@ -1,0 +1,19 @@
+def main
+
+   def correct
+      writeString: "\n---\n"
+      writeString: "10100\n"
+
+   def lala is byte: a as byte, b as ref byte
+      return: a & b
+
+   var a b is byte
+
+   a := true
+   b := false
+   writeByte: true
+   writeByte: false
+   writeByte: a
+   writeByte: b
+   writeByte: lala(false, a)
+   correct

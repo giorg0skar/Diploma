@@ -1,0 +1,7 @@
+def main
+    def fact is int: n as int
+        if n <= 2: return: n
+        else: return: n * fact(n-1)
+    
+    var x is int
+    x := fact(5)

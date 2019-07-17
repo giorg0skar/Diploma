@@ -1,0 +1,4 @@
+def main is int
+    var x is int
+    x := 'a'
+    return: 0

@@ -1,0 +1,4 @@
+def empty
+begin
+  skip
+end

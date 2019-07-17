@@ -1,0 +1,20 @@
+def main
+   var i j k is int
+   i := 1
+   loop:
+      if i >= 10:
+        break
+      j := 0
+      loop:
+         if j >= 10:
+           break
+         k := 0
+         loop:
+            if k >= 10:
+              break
+            if 100*i + 10*j + k = i*i*i +j*j*j +k*k*k:
+               writeInteger: 100*i+10*j+k
+               writeString: "\n"
+            k := k+1
+         j := j+1
+      i := i+1

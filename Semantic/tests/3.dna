@@ -1,0 +1,2 @@
+def main : x y z as int, a b c as byte, d as int[10]
+    skip

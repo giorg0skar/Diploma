@@ -1,0 +1,8 @@
+def main
+
+    def solve: i as int [2][2]
+        writeInteger: i[1][1]
+    
+    var n is int [2][2]
+    i [1][1] := 5
+    writeInteger: n

@@ -1,0 +1,51 @@
+def comp
+
+   def correct
+   begin
+      writeString: "\n---\n"
+      writeString: "236710\n"
+   end
+
+begin
+   if not (3 > 2):
+   begin
+     writeInteger: 1
+   end
+   else:
+   begin
+     writeInteger: 2
+   end
+   if not not (3 > 2):
+   begin
+     writeInteger: 3
+   end
+   else:
+   begin
+     writeInteger: 4
+   end
+   if not (3 < 7):
+   begin
+     writeInteger: 5
+   end
+   else:
+   begin
+     writeInteger: 6
+   end
+   if not ((3 > 2) and (3 < 2)):
+   begin
+      writeInteger: 7
+   end
+   else:
+   begin
+     writeInteger: 8
+   end
+   if (3 < 2) and (3 > 2) and (3 < 2):
+   begin
+     writeInteger: 9
+   end
+   else:
+   begin
+     writeInteger: 10
+   end
+   correct
+end

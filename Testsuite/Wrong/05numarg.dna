@@ -1,0 +1,11 @@
+def main
+
+   def narg: a b as int
+      writeInteger: a+b
+      writeString: "\nthis program is wrong!!!\n"
+
+   var i is int
+
+   i := 5
+   narg: i
+   writeString: "\nthis program is wrong!!!\n"

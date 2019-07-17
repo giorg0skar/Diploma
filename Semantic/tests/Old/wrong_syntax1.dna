@@ -1,0 +1,7 @@
+def main
+
+    var d is int
+    d := 1
+    var x is byte
+    x := 'a'
+    writeChar: x

@@ -1,0 +1,5 @@
+def main
+   var a b is int
+   var c is byte
+   c := a > b
+   writeString: "\nThis program is wrong!\n"

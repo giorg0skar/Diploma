@@ -1,0 +1,14 @@
+def scope
+
+   var x y is int
+
+   def test
+      var y is int
+      y := 2
+      writeInteger: x
+      writeInteger: y
+      writeString: "\n"
+      
+   x := 4
+   y := 9
+   test

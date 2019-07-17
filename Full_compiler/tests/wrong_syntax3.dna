@@ -1,0 +1,6 @@
+def main is int
+    var x is int
+    x := 1
+    if x > 0 return: 1
+    else if x < 0 return 2
+    return: 0

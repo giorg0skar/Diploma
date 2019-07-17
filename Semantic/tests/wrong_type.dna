@@ -1,0 +1,6 @@
+def main is int:
+    var x is int
+    var b is byte
+    x := 1
+    b := 'a'
+    return: x + b

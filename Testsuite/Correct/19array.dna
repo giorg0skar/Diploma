@@ -1,0 +1,10 @@
+def main
+  var a is int[10]
+  var i is int
+   i := 0
+   loop:
+     if i >= 10: break
+     a[i] := i * (i + 1)
+     i := i + 1
+   writeInteger: a[6]
+   writeString: "\n"

@@ -1,0 +1,77 @@
+def twoprime
+
+   def is2prime is byte: primeprime as int
+   
+      var num sqrt odd sum divisor quotient is int
+   
+   begin
+      num := primeprime
+      loop:
+      begin
+         if num = 2 or num <= 0:
+         begin
+           return: true
+         end
+         sqrt := 0
+         odd := 1
+         sum := 1
+         loop:
+         begin
+           if sum > num:
+           begin
+             break
+           end
+            sqrt := sqrt + 1
+            odd := odd + 2
+            sum := sum + odd
+         end
+         divisor := 3
+         loop:
+         begin
+            if divisor > sqrt:
+            begin
+              return: true
+            end
+            quotient := num / divisor
+            if num = divisor * quotient:
+            begin
+               return: false
+            end
+            else:
+            begin
+               divisor := divisor + 2
+            end
+         end
+         num := num / 10
+      end
+   end
+   
+   def output: n as int
+   begin
+      writeInteger: n
+      writeString: "\n"
+   end
+   
+   var max2prime i is int
+
+begin
+   writeString: "Limit: "
+   max2prime := readInteger()
+   i := 6
+   loop:
+   begin
+      if i > max2prime:
+      begin
+        break
+      end
+      if is2prime(i-1):
+      begin
+         output: i-1
+      end
+      if (i+1 <= max2prime) and is2prime(i+1):
+      begin
+         output: i+1
+      end
+      i := i + 6
+   end
+end

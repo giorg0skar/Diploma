@@ -1,0 +1,3 @@
+def main
+    var x is int
+    x := 1

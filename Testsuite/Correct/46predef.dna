@@ -1,0 +1,13 @@
+def predef
+
+   def newline
+      writeString: "\n"
+   
+   def writeString: i as int
+      writeInteger: i
+   
+   var writeInteger is int
+
+   writeInteger := 42
+   writeString: writeInteger
+   newline

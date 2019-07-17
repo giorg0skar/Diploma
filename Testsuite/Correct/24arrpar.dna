@@ -1,0 +1,12 @@
+def main
+
+  def reverse: s r as byte[], c as byte
+    if true:    writeChar: c
+    elif false: writeChar: s[0]
+    else:       writeChar: r[0]
+
+ var p s is byte[20]
+
+  reverse: s, p, '4'
+  reverse: "Hello", p, '2'
+  reverse: p, "Hello", '\n'

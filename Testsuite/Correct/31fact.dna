@@ -1,0 +1,20 @@
+def main
+   
+   def fact is int: n as int
+      var i result is int
+      result := 1
+      i := n
+      loop:
+         if i <= 1:
+           return: result
+         result := result * i
+         i := i - 1
+
+   var z is int
+
+  z := fact(7)
+  if z = 5040:
+    writeString: "42\n"
+  else:
+    writeInteger: z
+    writeString: " wrong!\n"

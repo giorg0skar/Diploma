@@ -1,0 +1,17 @@
+def main
+
+   def correct
+      writeString: "\n---\n"
+      writeString: "236710\n"
+
+   if not (3 > 2):                      writeInteger: 1
+   else:                                writeInteger: 2
+   if not not (3 > 2):                  writeInteger: 3
+   else:                                writeInteger: 4
+   if not (3 < 7):                      writeInteger: 5
+   else:                                writeInteger: 6
+   if not ((3 > 2) and (3 < 2)):        writeInteger: 7
+   else:                                writeInteger: 8
+   if (3 < 2) and (3 > 2) and (3 < 2):  writeInteger: 9
+   else:                                writeInteger: 10
+   correct

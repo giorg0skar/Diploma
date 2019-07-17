@@ -1,0 +1,26 @@
+def testelse
+
+   def test: x as int, msg1 msg2 msg3 as byte[]
+   begin
+      if x <> 1:
+      begin
+        if x <> 2:
+        begin
+          writeString: msg3
+        end
+        else:
+        begin
+          writeString: msg2
+        end
+      end
+      if x = 1:
+      begin
+        writeString: msg1
+      end
+   end
+
+begin
+   test: 1, "4", "\n\nwrong!!!\n\n", "\n\nwrong!!!\n\n"
+   test: 2, "\n\nwrong!!!\n\n", "2", "\n\nwrong!!!\n\n"
+   test: 3, "\n\nwrong!!!\n\n", "\n\nwrong!!!\n\n", "\n"
+end

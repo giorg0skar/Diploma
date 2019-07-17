@@ -1,0 +1,3 @@
+def main
+    var x is int
+    if 5 > 3: skip

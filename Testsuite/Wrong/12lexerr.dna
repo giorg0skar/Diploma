@@ -1,0 +1,4 @@
+def main
+   var a is byte
+   a := '\xWW'
+   writeString: "\nThis program is wrong!\n"

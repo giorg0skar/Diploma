@@ -1,0 +1,6 @@
+def main is int
+    var a is int
+    a := 5
+    if a >= 3: writeInteger: 1
+    else: writeInteger: 0
+    return: 0

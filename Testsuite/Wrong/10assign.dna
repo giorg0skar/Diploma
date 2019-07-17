@@ -1,0 +1,5 @@
+def main
+   def f is int return: 0
+   def g is int return: 0
+   f := g
+   writeString: "\nThis program is wrong!\n"

@@ -1,0 +1,5 @@
+def main
+   var a is int
+   if a:
+     skip
+   writeString: "\nThis program is wrong!\n"

@@ -1,0 +1,19 @@
+def over
+
+   def f
+   begin
+      writeString: "wrong!!!\n"
+   end
+
+   def g
+      def f
+      begin
+         writeString: "42\n"
+      end
+   begin
+      f
+   end
+
+begin
+   g
+end

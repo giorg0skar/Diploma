@@ -1,0 +1,9 @@
+def main
+
+   def aaa: a as ref int
+      writeInteger: a
+
+   var i is int
+
+   i := 3
+   aaa: i+5

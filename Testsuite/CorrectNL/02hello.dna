@@ -1,0 +1,4 @@
+def hello
+begin
+   writeString: "Hello world!\n"
+end

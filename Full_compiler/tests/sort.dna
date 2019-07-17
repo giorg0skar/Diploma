@@ -1,0 +1,59 @@
+def main is int
+
+    def bsort: n as int, x as int []
+
+		def swap: x y as ref int
+				var t is int
+				t := x
+				x := y
+				y := t
+
+		var changed is byte
+		var i is int
+
+		loop:
+			changed := false
+			i := 0
+			loop:
+				if i < n-1:
+					if x[i] > x[i+1]:
+						swap: x[i], x[i+1]
+						changed := true
+					i := i+1
+				else: break
+			if not changed: break
+
+    def writeArray: n as int, x as int []
+		var i is int
+
+		i := 0
+		loop:
+				if i < n:
+						if i > 0: writeString: ", "
+						writeInteger: x[i]
+						i := i+1
+				else: break
+		writeString: "\n"
+
+    var i j N is int
+    var b is byte[2]
+    var a is int [5]
+
+    N := readInteger()
+	#N := 10
+	readString: 1, b
+	#b := readChar()
+    i := 0
+    loop:
+        if i < N:
+            j := readInteger()
+			writeInteger: j
+			writeChar: ' '
+			a[i] := j
+            i := i+1
+        else: break
+	
+	writeChar: '\n'
+    bsort: N, a
+    writeArray: N, a
+    return: 0

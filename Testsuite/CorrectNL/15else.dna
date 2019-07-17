@@ -1,0 +1,17 @@
+def main
+begin
+  if 1 = 1:
+  begin
+    if 2 = 2:
+    begin
+      if 3 = 3:
+      begin
+        writeString: "42\n"
+      end
+      else:
+      begin
+        writeString: "wrong!!!\n"
+      end
+    end
+  end
+end

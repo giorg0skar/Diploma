@@ -1,0 +1,4 @@
+def main
+    decl g is int
+    
+    skip

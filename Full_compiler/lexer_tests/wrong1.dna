@@ -1,0 +1,4 @@
+def main is int
+    vari x is int
+    x := 0
+    return: 0

@@ -1,0 +1,12 @@
+def main is int
+    def fact is int: n as int
+        if n <= 1: return: 1
+        else: return: n*fact(n-1)
+    var x is int
+    x := readInteger()
+    if x >= 0:
+        writeInteger: fact(x)
+        writeChar: '\n'
+    else:
+        writeString: "Give a non negative number\n"
+    return: 0

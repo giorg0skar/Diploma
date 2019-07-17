@@ -1,0 +1,13 @@
+def main
+
+   def aaa: a as ref int
+   begin
+      writeInteger: a
+   end
+
+   var i is int
+
+begin
+   i := 3
+   aaa: i+5
+end

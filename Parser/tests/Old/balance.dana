@@ -1,0 +1,96 @@
+def main
+
+    var powers is int [15]
+    var R L is int [16]
+    var i k is int
+    var N M is int
+    var flag is byte
+
+    def initializeSet: set as int []
+        set[0] := -1
+    
+    def addElement: set as int[], n as int
+        # find where to insert the new element
+        var i is int
+        i := 0
+        loop:
+            if set[i] = -1: break
+            i := i + 1
+        
+        set[i] := n
+        set[i+1] := -1
+
+    def printSet: set as int[]
+        var i is int
+        i := 0
+        loop:
+            if set[i] = -1: break
+            writeInteger: set[i]
+            if set[i+1] <> -1:
+                writeString: " "
+            i := i + 1
+
+    def log3binary is int: M N as int
+        var l r mid is int
+        l := 0
+        r := N - 1
+        loop:
+            if (l >= r): break
+            mid := (l + r) / 2
+            if (powers[mid] = M): return: l
+            if (powers[mid] > M):
+                r := mid - 1
+            else:
+                l := mid + 1
+        
+        if (powers[l] <= M): return: l
+        return: l - 1
+
+    def getSum is int: k as int
+        return: (powers[k+1] - 1) / 2
+
+    # initialize powers array
+    powers[0] := 1
+    i := 1
+    loop:
+        if (i >= 15): break
+        powers[i] := powers[i - 1] * 3
+        i := i + 1
+
+    
+   N := readInteger()
+   M := readInteger()
+
+   initializeSet: R
+   initializeSet: L
+
+
+
+    flag := true
+
+    loop:
+        if (M = 0): break
+        k := log3binary(M, N)
+        if (M <= getSum(k)):
+            M := M - powers[k]
+            if (flag):
+                addElement: R, k
+            else:
+                addElement: L, k
+        else:
+            if (k = N - 1):
+                writeString: "[] []\n"
+                exit
+            M := powers[k+1] - M
+            if (flag):
+                addElement: R, k+1
+                flag := false
+            else:
+                addElement: L, k+1
+                flag := true
+    
+
+    printSet: L
+    writeChar: '\n'
+    printSet: R
+    writeString: "\n"

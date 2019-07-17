@@ -1,0 +1,42 @@
+def cond
+   var a is byte
+   var x y sum is int
+begin
+   x   := 10
+   y   := 0
+   a   := true
+   sum := 0
+   
+   loop:
+   begin
+      if not a:
+      begin
+        break
+      end
+      if a and x >= y:
+      begin
+         sum := sum + x * y
+         x := x-1
+      end
+      elif true:
+      begin
+         if y <= 10:
+         begin
+            x := 10
+         end
+         elif not false:
+         begin
+            a := false
+         end
+         y := y + 1
+      end
+   end
+   if sum = 1705:
+   begin
+      writeString: "42\n"
+   end
+   else:
+   begin
+     writeString: "wrong!!!\n"
+   end
+end

@@ -1,0 +1,11 @@
+def main
+   def g
+      def f is int: x as int begin return: x+1 end
+      def f is int: x as int begin return: x+2 end
+   begin
+     writeInteger: f(3)
+   end
+
+begin
+   writeString: "\nthis program is wrong!!!\n"
+end

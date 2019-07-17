@@ -1,0 +1,18 @@
+def func
+
+   def inc is int: x as int
+      return: x + 1
+   
+   def odd is byte: x as int
+      if x % 2 <> 0: return: true
+      else:          return: false
+
+   def f is int: x as int
+      if odd(x): return: x
+      else:      return: x * inc(x)
+
+   var x is int
+
+   x := f(6)
+   writeInteger: x
+   writeString: "\n"

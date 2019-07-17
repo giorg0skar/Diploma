@@ -1,0 +1,7 @@
+def main
+    var x is int
+    var y is byte
+    y := 'a'
+    x := 5
+    if 'b' <= 0: writeInteger: 42
+    

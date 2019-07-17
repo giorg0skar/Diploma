@@ -1,0 +1,4 @@
+def main
+    var b is byte
+    
+    b := 'a'

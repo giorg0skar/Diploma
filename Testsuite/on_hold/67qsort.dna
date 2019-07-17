@@ -1,0 +1,66 @@
+def main
+
+   def qsort: n as int, a as int[]
+
+      def qsort_auxil: lower upper as int
+
+	 def swap: a b as ref int
+	    var t is int
+	    t := a
+	    a := b
+	    b := t
+
+         var x i j is int
+         
+         if lower < upper:
+            x := a[(lower + upper) / 2]
+            i := lower
+            j := upper
+            loop:
+               if i > j:
+                  break
+               loop:
+                  if a[i] >= x:
+                     break
+                  i := i+1
+               loop:
+                  if a[j] <= x:
+                     break
+                  j := j-1
+               if i <= j:
+	          swap: a[i], a[j]
+                  i := i+1
+                  j := j-1
+	    qsort_auxil: lower, j
+	    qsort_auxil: i, upper
+
+      qsort_auxil: 0, n-1
+
+   def writeArray: msg as byte[], n as int, x as int[]
+      var i is int
+      writeString: msg
+      i := 0
+      loop:
+         if i >= n:
+            break
+         if i > 0:
+            writeString: ", "
+         writeInteger: x[i]
+         i := i+1
+      writeString: "\n"
+
+   var seed i is int
+   var x is int[16]
+
+   writeString: "Seed :\t"
+   seed := readInteger()
+   i := 0
+   loop:
+      if i >= 16:
+         break
+      seed := (seed * 137 + 220 + i) % 101
+      x[i] := seed
+      i := i+1
+   writeArray: "Initial array; ", 16, x
+   qsort: 16, x
+   writeArray: "Sorted array: ", 16, x

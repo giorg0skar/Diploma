@@ -1,0 +1,32 @@
+def main
+
+   var count i n is int
+   var mark is byte[1001]
+
+   count := 0
+   
+   i := 0
+   loop:
+      if i > 1000:
+        break
+      mark[i] := true
+      i := i+1
+
+   n:=2
+   loop:
+      if n > 1000:
+        break
+      if mark[n]:
+         count := count+1
+         writeInteger: n
+         writeString: "\t"
+         i:=n
+         loop:
+            if i > 1000:
+              break
+            mark[i] := false
+            i := i+n
+      n:=n+1
+   writeString: "\n\n"
+   writeInteger: count
+   writeString: " prime number(s) found\n"

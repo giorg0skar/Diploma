@@ -1,0 +1,35 @@
+def cancer
+
+   def is_it is byte: source as byte[]
+      var n i is int
+   begin
+      n:=strlen(source)
+      i:=0
+      loop:
+      begin
+         if i >= n / 2:
+         begin
+            return: true
+         end
+         if source[i] <> source[n-i-1]:
+         begin
+            return: false
+         end
+         i:=i+1
+      end
+   end
+	
+   var source is byte[31]
+   
+begin
+   writeString: "Give a string with maximum length 30: "
+   readString: 30, source
+   if is_it(source):
+   begin
+      writeString: "\nIs cancer...\n"
+   end
+   else:
+   begin
+      writeString: "\nIs not cancer...\n"
+   end
+end

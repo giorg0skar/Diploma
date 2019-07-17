@@ -1,0 +1,8 @@
+def main
+    var x is int
+    x := 5
+    loop:
+        x := x-1
+        if x > 2: continue
+        writeInteger: x
+    skip

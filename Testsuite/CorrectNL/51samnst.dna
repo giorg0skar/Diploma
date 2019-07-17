@@ -1,0 +1,25 @@
+def samnst
+
+   def a1
+      def b
+      begin
+         writeInteger: 4
+      end
+   begin
+      b
+   end
+
+   def a2
+      def b
+      begin
+        writeInteger: 2
+      end
+   begin
+      b
+   end
+
+begin
+   a1
+   a2
+   writeString: "\n"
+end

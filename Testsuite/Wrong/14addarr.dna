@@ -1,0 +1,4 @@
+def main
+   var a b is int[10]
+   writeInteger: a+b
+   writeString: "\nThis program is wrong!\n"

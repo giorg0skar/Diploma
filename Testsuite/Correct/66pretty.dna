@@ -1,0 +1,60 @@
+(* prettyStyle created by Clark *)
+
+def main
+
+	(* function starLine
+	-- prints a row of 'ch' characters 'size' times.
+	*)
+	def starLine: ch as byte, size as int
+		var i is int
+                i := 0
+		loop:
+                        if i >= size:
+                                break
+			writeChar: ch
+			i := i + 1
+
+	(* function starChar
+	-- prints a 'phrase' with 'ch' between each two consequent
+	-- characters.
+	*)
+	def starChar: phrase as byte[], ch as byte, size as int
+		var i is int
+		i := 0
+		loop:
+                        if i >= size:
+                                break
+			writeChar: ch
+                        writeChar: ' '
+			writeChar: phrase[i]
+                        writeChar: ' '
+			i := i + 1
+		writeChar: ch
+
+(* function starStyle
+-- prints a phrase really nice.
+*)
+
+	var size is int
+	var sym is byte[20]
+
+	writeString: "Give me a word: "
+	readString: 20, sym
+	size := strlen(sym)
+
+	writeString: "Let\'s print this nice...\n\n"
+	starLine: '*', 4 * size + 1
+        writeChar: '\n'
+	starChar: sym, '*', size
+        writeChar: '\n'
+	starLine: '*', 4 * size + 1
+        writeChar: '\n'
+
+	writeChar: '\n'
+
+	starLine: '#', 4 * size + 1
+        writeChar: '\n'
+	starChar: sym, '-', size
+        writeChar: '\n'
+	starLine: '#', 4 * size + 1
+        writeChar: '\n'

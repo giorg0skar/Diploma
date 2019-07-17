@@ -1,0 +1,21 @@
+def main
+
+   def isIt is byte: source as byte[]
+      var n i is int
+      n:=strlen(source)
+      i:=0
+      loop:
+         if i >= n / 2:
+            return: true
+         if source[i] <> source[n-i-1]:
+            return: false
+         i:=i+1
+	
+   var source is byte[31]
+   
+   writeString: "Give a string with maximum length 30: "
+   readString: 30, source
+   if isIt(source):
+      writeString: "\nIs cancer...\n"
+   else:
+      writeString: "\nIs not cancer...\n"

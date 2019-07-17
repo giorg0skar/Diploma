@@ -1,0 +1,16 @@
+def main is int
+    def g: n as ref int
+        (* pass buy reference *)
+        n := n + 1
+        exit
+    
+    var x is int
+    x := 1
+    writeString: "Before: "
+    writeInteger: x
+    writeChar: '\n'
+    g: x
+    writeString: "After: "
+    writeInteger: x
+    writeChar: '\n'
+    return: 0

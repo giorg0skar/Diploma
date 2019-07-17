@@ -1,0 +1,13 @@
+def main
+
+  def f is int[]: x as int[]
+  begin
+    return: x
+  end
+
+  var a is int[]
+
+begin
+  writeInteger: f(a)
+  writeString: "\nThis program is wrong!\n"
+end

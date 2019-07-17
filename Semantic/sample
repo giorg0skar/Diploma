@@ -1,0 +1,17 @@
+void yyerror (const char *msg) {
+  fprintf(stderr, "Dana error: %s\n", msg);
+  fprintf(stderr, "Aborting, I've had enough with line %d...\n",linenumber);
+  //fprintf(stderr, "text is %s\n", yytext);
+  exit(1);
+}
+
+int main() {
+	int token;
+	//int T_eof = 0
+  	do {
+    	token = yylex();
+    	//printf("token=%d, lexeme=\"%s\"\n", token, yytext);
+		printf("%d\n", token);
+  	} while (token != T_eof);
+	return 0;
+}

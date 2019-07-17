@@ -1,0 +1,13 @@
+def main is int
+
+    var x is int
+    x := 0
+    loop:
+        writeInteger: x
+        writeChar: '\n'
+        x := x+1
+        if x=5: break
+
+    writeInteger: x
+    writeChar: '\n'
+    return: 0

@@ -1,0 +1,33 @@
+def main
+
+   def stupid is int: a b as int
+      var i is int
+      if a > b:
+        i := a
+      else:
+        i := b
+      
+      loop:
+         if i <= 1:
+           return: 1
+         if a % i = 0 and b % i = 0:
+            return: i
+         i := i-1
+
+   def euclid is int: a b as int
+      if a = 0:
+         return: b
+      else:
+         return: euclid(b % a, a)
+         
+   def clever is int: a b as int
+      if a = 0 and b = 0:
+         return: 0
+      elif a <= b:
+         return: euclid(a, b)
+      else:
+         return: euclid(b, a)
+   
+   writeInteger: stupid(100, 932)
+   writeInteger: clever(288, 118)
+   writeChar: shrink(clever(26910, 3130))

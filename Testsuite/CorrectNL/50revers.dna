@@ -1,0 +1,39 @@
+def reverse
+
+   def length is int: s as byte[]
+     var result is int
+   begin
+      result := 0
+      loop:
+      begin
+         if s[result] = '\0':
+         begin
+            return: result
+         end
+         result := result + 1
+      end
+   end
+
+   def reverse: s r as byte[]
+      var i l is int
+   begin
+      l := length(s)
+      i := 0
+      loop:
+      begin
+         if i >= l:
+         begin
+            r[i] := '\0'
+            exit
+         end
+         r[i] := s[l-i-1]
+         i := i+1
+      end
+   end
+
+   var p is byte[20]
+
+begin
+   reverse: "\n!dlrow olleH", p
+   writeString: p
+end

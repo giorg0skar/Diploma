@@ -1,0 +1,6 @@
+def arr
+   var a is int[32]
+   a[0] := 14
+   a[24] := 28
+   writeInteger: a[0] + a[24]
+   writeString: "\n"

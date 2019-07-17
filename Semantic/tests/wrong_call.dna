@@ -1,0 +1,5 @@
+def main is int
+    def h: n as int, b as byte
+        writeInteger: n
+    h: 5, 10
+    return: 0

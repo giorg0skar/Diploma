@@ -1,0 +1,44 @@
+def main
+
+   def swapString: source dest as byte[]
+
+      def length is int: s as byte[]
+         var i is int
+         i := 0
+         loop:
+           if s[i] = '\0':
+             return: i
+           i := i+1
+
+      def swap: x y as byte
+         var z is byte
+         z := x
+         x := y
+         y := z
+      
+      var i is int
+      
+      i := 0
+      loop:
+         if i > length(source):
+           break
+         dest[i] := source[i]
+         i := i+1
+      i := 0
+      loop:
+         if i >= length(dest) / 2:
+           break
+         swap: dest[i], dest[length(dest) - i - 1]
+         i := i+1
+
+   var a b is byte[50]
+
+   swapString: "Hello world!", a
+   writeString: "Original String    : Hello world!\n"
+   writeString: "Reverse String     : "
+   writeString: a
+   writeString: "\n"
+   swapString: a, b
+   writeString: "Back from the dead : "
+   writeString: b
+   writeString: "\n"

@@ -1,0 +1,7 @@
+def main
+
+   def f: a as int
+     return: a
+
+   f: 5
+   writeString: "\nThis program is wrong!\n"

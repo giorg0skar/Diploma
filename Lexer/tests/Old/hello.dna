@@ -1,0 +1,22 @@
+def main is int
+
+    def g: arr as int[], n as ref int
+        arr[n] := n + 1
+        writeInteger: arr[n]
+
+    var y is int[5]
+    var x is int
+    #y := "door"
+    x := 0
+    (*loop:
+        if x >= 5: break
+        y[x] := x
+        x := x + 1
+    
+    x := 2
+    g: y, x*)
+    writeChar: '\x40'
+    writeChar: '\n'
+    
+    return: 0
+

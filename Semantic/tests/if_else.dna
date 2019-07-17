@@ -1,0 +1,6 @@
+def main
+    var x is int
+    x := 1
+    if x > 10: skip
+    elif x > 5: exit
+    else: x := 5

@@ -1,0 +1,21 @@
+def main
+  var i r is int
+begin
+  i := 1
+  r := 0
+  loop x1:
+  begin
+    loop x2:
+    begin
+      i := i+1
+      if i=42:
+      begin
+        r := r + i
+        break: x1
+      end
+    end
+    r := r+1000
+  end
+  writeInteger: r
+  writeString: "\n"
+end

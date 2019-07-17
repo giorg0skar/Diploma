@@ -1,0 +1,12 @@
+def main is int
+    var x y is int
+    var z is int[10]
+    x := readInteger()
+    y := readInteger()
+    if (x & y) = true:
+        writeString: "Both are true\n"
+    elif (x | y) = true:
+        writeString: "At least one is true\n"
+    else:
+        writeString: "Both are false\n"
+    return: 0

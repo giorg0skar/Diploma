@@ -1,0 +1,5 @@
+def main
+    def g is int: a as int, b as byte
+        return: a
+    var x is int
+    x := g(3,'a')

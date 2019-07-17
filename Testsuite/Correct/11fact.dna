@@ -1,0 +1,16 @@
+def main
+   
+   def fact is int: n as int
+      if n = 0:
+        return: 1
+      else:
+        return: n * fact (n - 1)
+
+   var z is int
+
+  z := fact(7)
+  if z = 5040:
+     writeString: "42\n"
+  else:
+     writeInteger: z
+     writeString: " wrong!\n"

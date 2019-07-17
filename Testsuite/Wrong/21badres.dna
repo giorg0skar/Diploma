@@ -1,0 +1,7 @@
+def main
+
+  def f is int: x as int
+    return: shrink(x)
+
+  writeInteger: f(5)
+  writeString: "\nThis program is wrong!\n"
