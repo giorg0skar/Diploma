@@ -5,10 +5,10 @@
 #this script will run semantic analysis comparing a student's compiler with a correct compiler
 #a random executable is chosen for testing
 
-# path_to_here="$1"
-# path_to_uc="$2"
-path_to_here="/home/george/Documents/Diplomatiki"
-path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
+path_to_here="$1"
+path_to_uc="$2"
+# path_to_here="/home/george/Documents/Diplomatiki"
+# path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
 
 #make -C Full_compiler/
 make -C $path_to_uc
@@ -22,7 +22,7 @@ then
     cp $path_to_uc/EXECUTABLE .
 fi
 
-echo "/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src/compile.sh -l" | tee EXECUTABLE
+# echo "/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src/compile.sh -l" | tee EXECUTABLE
 #compiler_tests.py path_to_current_dir name_of_correct_compiler is_there_name_of_uc
 
 if [ -s EXECUTABLE ]
