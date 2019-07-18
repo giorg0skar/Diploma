@@ -37,12 +37,6 @@ path_to_tested = sys.argv[4]
 correct_tests = listdir(path_to_correct)
 wrong_tests = listdir(path_to_wrong)
 
-# print (correct_tests)
-# print ("")
-# print(wrong_tests)
-
-# exit(0)
-
 
 #read the name of the compiler executable from a text file
 check = int(sys.argv[3])
@@ -69,8 +63,7 @@ for test in correct_tests:
     expected_output = path_to_output + test[:-4] + ".out"
     print( str(count) + ". Running correct test: " + test)
     print ("--------------------------------")
-    # to_execute = path_to_here + "/test_correct.sh " + compiler_to_test + " "  + inputname + " " + expected_output + " " + path_to_input
-    # x = system(to_execute )
+    
     x = system(compiler_to_test + " " + inputname)
     val = x >> 8
     if (val == 1):
@@ -99,7 +92,6 @@ for test in correct_tests:
         correct_cases += 1
     count += 1
     #we delete the a.out executable produced from the compiler
-    #system("rm " + path_to_tested + "/a.out")
     system("rm " + path_to_correct + "a.out 2> /dev/null")
     print("")
 

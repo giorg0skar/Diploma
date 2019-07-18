@@ -13,7 +13,7 @@ path_to_uc="$2"
 #make -C Full_compiler/
 make -C $path_to_uc
 
-correct_sem="$path_to_here/Full_compiler/danac"
+correct_comp="$path_to_here/Full_compiler/danac"
 
 # if the user has specified the name of his compiler's executable file then we read it.
 # otherwise we consider the newest executable after 'make' the compiler exe file
@@ -28,12 +28,12 @@ fi
 if [ -s EXECUTABLE ]
 then
     cd $path_to_uc
-    $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_sem 1 $path_to_uc
+    $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_comp 1 $path_to_uc
     exit_status=$?
     cd $path_to_here
 else
     cd $path_to_uc
-    $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_sem 0 $path_to_uc
+    $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_comp 0 $path_to_uc
     exit_status=$?
     cd $path_to_here
 fi
