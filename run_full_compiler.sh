@@ -7,10 +7,10 @@
 
 path_to_here="$1"
 path_to_uc="$2"
-# path_to_here="/home/george/Documents/Diplomatiki"
+# path_to_here="/home/george/Documents/Diplomatiki"/Diploma
 # path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
 
-#make -C Full_compiler/
+make -C Full_compiler/
 make -C $path_to_uc
 
 correct_comp="$path_to_here/Full_compiler/danac"

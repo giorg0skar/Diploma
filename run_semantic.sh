@@ -2,12 +2,13 @@
 
 #this script will run semantic analysis comparing a student's compiler with a correct compiler
 #a random executable is chosen for testing
-path_to_here="/home/george/Documents/Diplomatiki"
-path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
-# path_to_here="$1"
-# path_to_uc="$2"
 
-#make -C Semantic/
+# path_to_here="/home/george/Documents/Diplomatiki"
+# path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
+path_to_here="$1"
+path_to_uc="$2"
+
+make -C Semantic/
 make -C $path_to_uc
 
 # if the user has specified the name of his compiler's executable file then we read it.
@@ -19,7 +20,7 @@ then
 #     ./check.sh $path_to_uc
 fi
 
-correct_sem="/home/george/Documents/Diplomatiki/Semantic/dana"
+correct_sem="/home/george/Documents/Diplomatiki/Diploma/Semantic/dana"
 
 echo "$path_to_uc/zds -l" > COMPILER
 

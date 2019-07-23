@@ -2,12 +2,13 @@
 
 #this script will run semantic analysis comparing a student's compiler with a correct compiler
 #a random executable is chosen for testing
-path_to_here="/home/george/Documents/Diplomatiki"
-path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
-# path_to_here="$1"
-# path_to_uc="$2"
 
-#make -C Lexer/
+# path_to_here="/home/george/Documents/Diplomatiki"
+# path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
+path_to_here="$1"
+path_to_uc="$2"
+
+make -C Lexer/
 make -C $path_to_uc
 
 # if the user has specified the name of his compiler's executable file then we read it.

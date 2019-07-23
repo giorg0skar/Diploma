@@ -5,8 +5,9 @@
 # path_to_here: path to the current directory
 # path_to_uc: path to the directory that contains the source files of the compiler to-be-tested (uc: abbreviation of user's compiler)
 
-path_to_here="/home/george/Documents/Diplomatiki"
-path_to_uc="$path_to_here/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
+path_to_here="/home/george/Documents/Diplomatiki/Diploma"
+# path_to_uc="$path_to_here/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
+path_to_uc="/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src"
 
 make -C $path_to_uc
 
@@ -28,8 +29,8 @@ exits=$?
 ./run_full_compiler $path_to_here $path_to_uc
 exitf=$?
 
-echo ""
-echo "-----------------"
+echo "R E S U L T S"
+echo "---------------------------------"
 if [ $exitl -eq 0 ];
 then
     echo "LEXER: passed"
@@ -58,6 +59,6 @@ else
     echo "EXECUTION: failed"
 fi
 
-echo "-----------------"
+echo "---------------------------------"
 
 exit 0
