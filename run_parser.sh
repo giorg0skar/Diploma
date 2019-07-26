@@ -8,7 +8,7 @@
 path_to_here="$1"
 path_to_uc="$2"
 
-make -C Lexer/
+make -C Parser/
 make -C $path_to_uc
 
 # if the user has specified the name of his compiler's executable file then we read it.
@@ -16,22 +16,21 @@ make -C $path_to_uc
 # if [ -s $path_to_uc/COMPILER ]
 # then
 #     cp $path_to_uc/COMPILER .
-# else
-#     ./check.sh $path_to_uc
 # fi
 
-correct_lex="$path_to_here/Lexer/dana"
+correct_sem="$path_to_here/Parser/dana"
 
+# echo "$path_to_uc/zds -l" > COMPILER
 
 if [ -s COMPILER ];
 then
     cd $path_to_uc
-    $path_to_here/Lexer/lexer_tests.py $path_to_here 1 $correct_lex
+    $path_to_here/Parser/parser_tests.py $path_to_here 1
     exit_status=$?
     cd $path_to_here
 else
     cd $path_to_uc
-    $path_to_here/Lexer/lexer_tests.py $path_to_here 0 $correct_lex
+    $path_to_here/Parser/parser_tests.py $path_to_here 0
     exit_status=$?
     cd $path_to_here
 fi

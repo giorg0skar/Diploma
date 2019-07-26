@@ -16,20 +16,20 @@ then
     # cp $path_to_uc/COMPILER .
     text=`cat $path_to_uc/COMPILER`
     echo "$path_to_uc/$text" > COMPILER
-# else
-#     ./check.sh $path_to_uc
 fi
 
-./run_lexer $path_to_here $path_to_uc
+./run_lexer.sh $path_to_here $path_to_uc
 exitl=$?
-./run_parser $path_to_here $path_to_uc
+./run_parser.sh $path_to_here $path_to_uc
 exitp=$?
-./run_semantic $path_to_here $path_to_uc
+./run_semantic.sh $path_to_here $path_to_uc
 exits=$?
-./run_full_compiler $path_to_here $path_to_uc
+./run_full_compiler.sh $path_to_here $path_to_uc
 exitf=$?
 
-echo "R E S U L T S"
+
+echo ""
+echo "RESULTS"
 echo "---------------------------------"
 if [ $exitl -eq 0 ];
 then

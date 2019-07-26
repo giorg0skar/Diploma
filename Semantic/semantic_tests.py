@@ -3,7 +3,7 @@
 import sys
 import io
 import random
-from os import listdir, system
+from os import listdir, system, chdir
 from os.path import isfile, join
 
 
@@ -19,6 +19,8 @@ class bcolors:
 
 # system("rm tests/*.out")
 # system("rm tests/*.err")
+
+# chdir(sys.argv[3])
 
 #compiler_to_test = sys.argv[1]
 path_to_here = sys.argv[1]

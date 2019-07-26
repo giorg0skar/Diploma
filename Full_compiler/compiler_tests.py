@@ -55,6 +55,7 @@ wrong_cases = 0
 count = 1
 wrong_list = []
 
+# the suffix of test files is .dna
 
 print(bcolors.OKBLUE + "Correct test cases:" + bcolors.ENDC)
 

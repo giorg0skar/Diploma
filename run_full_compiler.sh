@@ -17,15 +17,15 @@ correct_comp="$path_to_here/Full_compiler/danac"
 
 # if the user has specified the name of his compiler's executable file then we read it.
 # otherwise we consider the newest executable after 'make' the compiler exe file
-if [ -s $path_to_uc/EXECUTABLE ]
+if [ -s $path_to_uc/EXECUTABLE ];
 then
-    cp $path_to_uc/EXECUTABLE .
+    # cp $path_to_uc/EXECUTABLE .
+    text=`cat $path_to_uc/EXECUTABLE`
+    echo "$path_to_uc/$text" > EXECUTABLE
 fi
 
-# echo "/home/george/Documents/Diplomatiki/Students_dana_2017/dimitriadis-zamanis-spantouris/src/compile.sh -l" | tee EXECUTABLE
-#compiler_tests.py path_to_current_dir name_of_correct_compiler is_there_name_of_uc
 
-if [ -s EXECUTABLE ]
+if [ -s EXECUTABLE ];
 then
     cd $path_to_uc
     $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_comp 1 $path_to_uc

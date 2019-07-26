@@ -114,3 +114,7 @@ print("Cases with errors: " + str(low) + " - " + str(low-1 + len(wrong_tests)) +
 print(bcolors.OKGREEN + "number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC)
 if (wrong_cases > 0):
     print(bcolors.FAIL + "number of wrong test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC)
+    exit(1)
+else:
+    print(bcolors.OKGREEN + "Compiler is lexically correct!\n" + bcolors.ENDC)
+    exit(0)
