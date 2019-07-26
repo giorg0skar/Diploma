@@ -24,7 +24,7 @@ the_args = sys.argv
 
 #compiler_to_test = sys.argv[1]
 path_to_here = sys.argv[1] + "/Full_compiler"
-correct_sem = sys.argv[2]
+correct_comp = sys.argv[2]
 
 #list of all files in tests/ directory (only files)
 path_to_suite = sys.argv[1] + "/Testsuite"
@@ -32,7 +32,7 @@ path_to_correct = path_to_suite + "/Correct/"
 path_to_wrong = path_to_suite + "/Wrong/"
 path_to_output = path_to_suite + "/Correct_Output/"
 path_to_input = path_to_suite + "/Input"
-path_to_tested = sys.argv[4]
+path_to_tested = sys.argv[4] + "/"
 
 correct_tests = listdir(path_to_correct)
 wrong_tests = listdir(path_to_wrong)
@@ -77,9 +77,11 @@ for test in correct_tests:
     print("Compiling finished")
     inname = path_to_input + "/" + test[:-4] + ".in"
     if (isfile(inname)):
-        system(path_to_correct + "a.out < " + inname + " > user_output")
+        # system(path_to_correct + "a.out < " + inname + " > user_output")
+        system(path_to_tested + "a.out < " + inname + " > user_output")
     else:
-        system(path_to_correct + "a.out > user_output")
+        # system(path_to_correct + "a.out > user_output")
+        system(path_to_tested + "a.out > user_output")
     
     x = system("diff -s user_output " + expected_output)
     system("rm user_output")
@@ -93,7 +95,8 @@ for test in correct_tests:
         correct_cases += 1
     count += 1
     #we delete the a.out executable produced from the compiler
-    system("rm " + path_to_correct + "a.out 2> /dev/null")
+    # system("rm " + path_to_correct + "a.out 2> /dev/null")
+    system("rm " + path_to_tested + "a.out 2> /dev/null")
     print("")
 
 print("")
@@ -128,18 +131,18 @@ print("Correct cases: 1 - " + str(len(correct_tests)))
 low = len(correct_tests) + 1
 print("Cases with errors: " + str(low) + " - " + str(low-1 + len(wrong_tests)) + "\n")
 
-print( bcolors.OKGREEN + "number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC )
+print( bcolors.OKGREEN + "Number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC )
 if (wrong_cases > 0):
-    print( bcolors.FAIL + "number of failed test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC )
+    print( bcolors.FAIL + "Number of failed test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC )
 else:
     print(bcolors.OKGREEN + "Compiler is running correctly!\n" + bcolors.ENDC)
 
 
 # cleanup
-system("rm " + path_to_correct + "*.imm")
-system("rm " + path_to_correct + "*.asm")
-system("rm " + path_to_wrong + "*.imm")
-system("rm " + path_to_wrong + "*.asm")
+system("rm " + path_to_correct + "*.ll")
+system("rm " + path_to_correct + "*.s")
+system("rm " + path_to_wrong + "*.ll")
+system("rm " + path_to_wrong + "*.s")
 #system("rm " + path_to_correct + "a.out")
 system("rm " + path_to_wrong + "a.out")
 system("rm " + path_to_wrong + "a.ll")

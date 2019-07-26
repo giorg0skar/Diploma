@@ -31,9 +31,9 @@ if (check == 1):
     file_to_read.close()
 else:
     #if the user hasn't specified a name for his compiler we assume the executable is named 'compiler'
-    compiler_to_test = "./compiler"
+    compiler_to_test = sys.argv[3] + "/compiler"
 
-correct_lex = sys.argv[3]
+correct_lex = sys.argv[4]
 
 #list of all files in tests/ directory (only files)
 path_to_suite = sys.argv[1] + "/Testsuite"
@@ -51,7 +51,7 @@ base = basename(compiler_to_test)
 
 for test in correct_tests:
     inputname = path_to_correct + test
-    print ( str(count) + ". Running test: " + test)
+    print ( str(count) + ". Running lexer test: " + test)
     print ("----------------------")
     # x = system("./check_lexer.sh " + inputname + " " + compiler_to_test)
     x = system(compiler_to_test + " < " + inputname + " > user_output")
@@ -59,8 +59,13 @@ for test in correct_tests:
 
     val = x >> 8
     if (val == 1):
-        wrong_cases += 1
-        wrong_list.append(count)
+        correct_val = y >> 8
+        if (correct_val == 0):
+            wrong_cases += 1
+            wrong_list.append(count)
+        else:
+            print("Error caught correctly")
+            correct_cases += 1
     else:
         x = system("diff -s user_output output")
         system("rm output user_output")
@@ -76,7 +81,7 @@ for test in correct_tests:
 
 for test in wrong_tests:
     inputname = path_to_wrong + test
-    print ( str(count) + ". Running test: " + test)
+    print ( str(count) + ". Running lexer test: " + test)
     print ("----------------------")
     # x = system("./check_lexer " + inputname + compiler_to_test + correct_lex)
     x = system(compiler_to_test + " < " + inputname + " > user_output")
@@ -111,9 +116,9 @@ print("Correct cases: 1 - " + str(len(correct_tests)))
 low = len(correct_tests) + 1
 print("Cases with errors: " + str(low) + " - " + str(low-1 + len(wrong_tests)) + "\n")
 
-print(bcolors.OKGREEN + "number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC)
+print(bcolors.OKGREEN + "Number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC)
 if (wrong_cases > 0):
-    print(bcolors.FAIL + "number of wrong test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC)
+    print(bcolors.FAIL + "Number of wrong test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC)
     exit(1)
 else:
     print(bcolors.OKGREEN + "Compiler is lexically correct!\n" + bcolors.ENDC)

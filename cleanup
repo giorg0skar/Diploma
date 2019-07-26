@@ -1,0 +1,6 @@
+#!/bin/bash
+
+make -C Lexer/ distclean
+make -C Parser/ distclean
+make -C Semantic/ distclean
+make -C Full_compiler/ distclean

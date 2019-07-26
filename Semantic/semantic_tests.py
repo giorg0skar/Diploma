@@ -33,7 +33,7 @@ if (check == 1):
     file_to_read.close()
 else:
     #if the user hasn't specified a name for his compiler we assume the executable is named 'compiler'
-    compiler_to_test = "./compiler"
+    compiler_to_test = sys.argv[3] + "/compiler"
 
 #list of all files in tests/ directory (only files)
 path_to_suite = sys.argv[1] + "/Testsuite"
@@ -58,7 +58,7 @@ print(bcolors.OKBLUE + "Correct test cases:" + bcolors.ENDC)
 
 for test in correct_tests:
     inputname = path_to_correct + test
-    print( str(count) + ".Running correct test: " + test)
+    print( str(count) + ".Running correct semantic test: " + test)
     print ("--------------------------------")
     # x = system("./check_semantic.sh " + inputname + " " + compiler_to_test + " " + correct_sem)
     x = system(compiler_to_test + " < " + inputname)
@@ -80,7 +80,7 @@ print(bcolors.OKBLUE + "Purposefully wrong test cases:" + bcolors.ENDC)
 
 for test in wrong_tests:
     inputname = path_to_wrong + test
-    print( str(count) + ".Running wrong test: " + test)
+    print( str(count) + ".Running wrong semantic test: " + test)
     print ("-------------------------------")
     # x = system("./check_semantic.sh " + inputname + " " + compiler_to_test + " " + correct_sem)
     x = system(compiler_to_test + " < " + inputname)
@@ -104,9 +104,9 @@ print("Correct cases: 1 - " + str(len(correct_tests)))
 low = len(correct_tests) + 1
 print("Cases with errors: " + str(low) + " - " + str(low-1 + len(wrong_tests)) + "\n")
 
-print( bcolors.OKGREEN + "number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC )
+print( bcolors.OKGREEN + "Number of correct test cases: " + str(correct_cases) + "/" + str(total) + bcolors.ENDC )
 if (wrong_cases > 0):
-    print( bcolors.FAIL + "number of failed test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC )
+    print( bcolors.FAIL + "Number of failed test cases: " + str(wrong_cases) + "/" + str(total) + " : " + str(wrong_list) + bcolors.ENDC )
     exit(1)
 else:
     print(bcolors.OKGREEN + "Compiler is semantically correct!\n" + bcolors.ENDC)
