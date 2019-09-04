@@ -26,21 +26,15 @@ done
 # to run every step of the compiler separate directories need to be specified
 # the script contains an example of the names those directories may have
 
+# echo "Give path to current directory "
+# read -r path_to_here
+# echo "Give path to the compiler under test "
+# read -r path_to_uc
+
 path_to_here="/home/george/Documents/Diplomatiki/Diploma"
-# path_to_here=$(pwd)
 path_to_uc="/home/george/Documents/Compilers"
 
 
-# I have chosen to implement the next two tasks in the run scripts
-
-# make -C $path_to_uc
-
-# if [ -s $path_to_uc/COMPILER ]
-# then
-#     # cp $path_to_uc/COMPILER .
-#     text=`cat $path_to_uc/COMPILER`
-#     echo "$path_to_uc/$text" > COMPILER
-# fi
 
 if [ "$runlexer" = true ];
 then
@@ -57,8 +51,8 @@ fi
 
 if [ "$runparser" = true ];
 then
-    ./run_lexer.sh $path_to_here "$path_to_uc/Lexer"
-    exitl=$?
+    ./run_parser.sh $path_to_here "$path_to_uc/Parser"
+    exitp=$?
     if [ $exitp -eq 0 ];
     then
         echo "PARSER: passed"

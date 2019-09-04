@@ -20,7 +20,8 @@ if [ -s $path_to_uc/EXECUTABLE ];
 then
     # cp $path_to_uc/EXECUTABLE .
     text=`cat $path_to_uc/EXECUTABLE`
-    echo "$path_to_uc/$text" > EXECUTABLE
+    # echo "$path_to_uc/$text" > EXECUTABLE
+    echo "$text" > EXECUTABLE
 fi
 
 
