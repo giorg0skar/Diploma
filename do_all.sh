@@ -38,7 +38,7 @@ path_to_uc="/home/george/Documents/Compilers"
 
 if [ "$runlexer" = true ];
 then
-    ./run_lexer.sh $path_to_here "$path_to_uc/Lexer"
+    $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/Lexer"
     exitl=$?
     if [ $exitl -eq 0 ];
     then
@@ -51,7 +51,7 @@ fi
 
 if [ "$runparser" = true ];
 then
-    ./run_parser.sh $path_to_here "$path_to_uc/Parser"
+    $path_to_here/run_parser.sh $path_to_here "$path_to_uc/Parser"
     exitp=$?
     if [ $exitp -eq 0 ];
     then
@@ -64,7 +64,7 @@ fi
 
 if [ "$runsemantic" = true ];
 then
-    ./run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
+    $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
     exits=$?
     if [ $exits -eq 0 ];
     then
@@ -77,7 +77,7 @@ fi
 
 if [ "$runfull" = true ];
 then
-    ./run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
+    $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
     exitf=$?
     if [ $exitf -eq 0 ];
     then
@@ -88,16 +88,16 @@ then
     exit 0
 fi
 
-./run_lexer.sh $path_to_here "$path_to_uc/Lexer"
+$path_to_here/run_lexer.sh $path_to_here "$path_to_uc/Lexer"
 exitl=$?
 
-./run_parser.sh $path_to_here "$path_to_uc/Parser"
+$path_to_here/run_parser.sh $path_to_here "$path_to_uc/Parser"
 exitp=$?
 
-./run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
+$path_to_here/run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
 exits=$?
 
-./run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
+$path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
 exitf=$?
 
 

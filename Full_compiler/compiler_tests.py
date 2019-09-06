@@ -139,13 +139,13 @@ else:
 
 
 # cleanup
-system("rm " + path_to_correct + "*.ll")
-system("rm " + path_to_correct + "*.s")
-system("rm " + path_to_wrong + "*.ll")
-system("rm " + path_to_wrong + "*.s")
+system("rm " + path_to_correct + "*.ll 2> /dev/null")
+system("rm " + path_to_correct + "*.s 2> /dev/null")
+system("rm " + path_to_wrong + "*.ll 2> /dev/null")
+system("rm " + path_to_wrong + "*.s 2> /dev/null")
 #system("rm " + path_to_correct + "a.out")
-system("rm " + path_to_wrong + "a.out")
-system("rm " + path_to_wrong + "a.ll")
+system("rm " + path_to_wrong + "a.out 2> /dev/null")
+system("rm " + path_to_wrong + "a.ll 2> /dev/null")
 
 if (wrong_cases > 0):
     exit(1)
