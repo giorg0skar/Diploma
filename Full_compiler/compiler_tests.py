@@ -83,7 +83,7 @@ for test in correct_tests:
         # system(path_to_correct + "a.out > user_output")
         system(path_to_tested + "a.out > user_output")
     
-    x = system("diff -s user_output " + expected_output)
+    x = system("diff -s user_output " + test[:-4] + ".out")
     system("rm user_output")
     #print("")
     val = x >> 8
