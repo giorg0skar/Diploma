@@ -74,7 +74,7 @@ for test in correct_tests:
         count += 1
         continue
     
-    print("Compiling finished")
+    print(bcolors.OKGREEN + "Compiling finished" + bcolors.ENDC)
     inname = path_to_input + "/" + test[:-4] + ".in"
     if (isfile(inname)):
         # system(path_to_correct + "a.out < " + inname + " > user_output")
@@ -83,7 +83,7 @@ for test in correct_tests:
         # system(path_to_correct + "a.out > user_output")
         system(path_to_tested + "a.out > user_output")
     
-    x = system("diff -s user_output " + test[:-4] + ".out")
+    x = system("diff -s user_output " + expected_output + " --label user_output --label " + test[:-4] + ".out")
     system("rm user_output")
     #print("")
     val = x >> 8
@@ -104,7 +104,7 @@ print(bcolors.OKBLUE + "Purposefully wrong test cases:" + bcolors.ENDC)
 
 for test in wrong_tests:
     inputname = path_to_wrong + test
-    print( str(count) + ". Running wrong test: " + test)
+    print( str(count) + ". Running test with errors: " + test)
     print ("-------------------------------")
 
     #print(bcolors.WARNING)
@@ -115,10 +115,10 @@ for test in wrong_tests:
 
     val = x >> 8
     if (val == 1):
-        print("Recognised error correctly")
+        print(bcolors.OKGREEN + "Recognised error correctly" + bcolors.ENDC)
         correct_cases += 1
     else:
-        print("Compiler didn't catch the error")
+        print(bcolors.WARNING + "Compiler didn't catch the error" + bcolors.ENDC)
         wrong_cases += 1
         wrong_list.append(count)
     print("")
