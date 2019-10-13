@@ -9,6 +9,7 @@ path_to_here="$1"
 path_to_uc="$2"
 # path_to_here="/home/george/Documents/Diplomatiki/Diploma"
 
+# BUILD
 make -C $path_to_here/Full_compiler/
 make -C $path_to_uc
 
