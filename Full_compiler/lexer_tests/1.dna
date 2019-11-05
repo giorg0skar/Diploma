@@ -1,7 +1,0 @@
-def main is int
-    var x y z is int
-    x := 1
-    y := 1
-    if (x >= 0) and (y >= 1):
-        writeString: "and is ok\n"
-    return: 0

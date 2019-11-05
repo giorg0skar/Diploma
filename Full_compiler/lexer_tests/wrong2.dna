@@ -1,6 +1,0 @@
-def main is int
-    var x y is int
-    x := 1
-    y := 2
-    x := x ** y
-    return: 0

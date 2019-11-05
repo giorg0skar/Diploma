@@ -64,7 +64,7 @@ for test in correct_tests:
             wrong_cases += 1
             wrong_list.append(count)
         else:
-            print("Error caught correctly")
+            print("Recognised error correctly")
             correct_cases += 1
     else:
         x = system("diff -s user_output output")
@@ -91,17 +91,18 @@ for test in wrong_tests:
     correct_val = y >> 8
     if (val == 1):
         if (correct_val == 0):
+            print(bcolors.WARNING + "Errors were detected when none exist" + bcolors.ENDC)
             wrong_cases += 1
             wrong_list.append(count)
         else:
-            print("Error caught correctly")
+            print(bcolors.OKGREEN + "Recognised error correctly" + bcolors.ENDC)
             correct_cases += 1
     else:
         x = system("diff -s user_output output")
         system("rm output user_output")
         val = x >> 8
         if (val == 1):
-            print(bcolors.BOLD + "Error, output mismatch in " + test + bcolors.ENDC)
+            print(bcolors.WARNING + "Error, output mismatch in " + test + bcolors.ENDC)
             wrong_cases += 1
             wrong_list.append(count)
         else:

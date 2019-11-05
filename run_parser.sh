@@ -8,7 +8,7 @@
 path_to_here="$1"
 path_to_uc="$2"
 
-make -C $path_to_here/Parser/
+# make -C $path_to_here/Parser/
 make -C $path_to_uc
 
 # if the user has specified the name of his compiler's executable file then we read it.
@@ -22,6 +22,7 @@ fi
 
 correct_parser="$path_to_here/Parser/dana"
 
+cd $path_to_uc
 
 if [ -s COMPILER ];
 then

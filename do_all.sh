@@ -26,23 +26,24 @@ done
 # to run every step of the compiler separate directories need to be specified
 # the script contains an example of the names those directories may have
 
-# echo "Give the path to the project directory "
-# read -r path_to_here
-# echo "Give the path to the compiler under test home directory"
-# read -r path_to_uc
+echo "Give the path to the project directory "
+read -r path_to_here
+echo "Give the path to the compiler under test home directory"
+read -r path_to_uc
 
-path_to_here="/home/george/Documents/Diplomatiki/Diploma"
-path_to_uc="/home/george/Documents/Compilers"
+# path_to_here="/home/george/Documents/Diplomatiki/Diploma"
+# path_to_uc="/home/george/Documents/Compilers"
 
-echo "You may be asked to give some directories for each compiler phase below."
-echo "Since the home dir is given only the directory name for each phase need to be given i.e Lexer. Full path is not required"
+echo "You may be asked to provide the names of directories for each compiler phase."
+echo "Since the home directory is given, only the directory name for each phase needs to be written i.e Lexer. Full path is not required"
+read -p "Press enter to start"
 
 if [ "$runlexer" = true ];
 then
     echo "Give Lexer directory"
-    # read -r lexer_dir
-    # $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/$lexer_dir"
-    $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/Lexer"
+    read -r lexer_dir
+    $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/$lexer_dir"
+    # $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/Lexer"
     exitl=$?
     if [ $exitl -eq 0 ];
     then
@@ -56,9 +57,9 @@ fi
 if [ "$runparser" = true ];
 then
     echo "Give Parser directory"
-    # read -r parser_dir
-    # $path_to_here/run_parser.sh $path_to_here "$path_to_uc/$parser_dir"
-    $path_to_here/run_parser.sh $path_to_here "$path_to_uc/Parser"
+    read -r parser_dir
+    $path_to_here/run_parser.sh $path_to_here "$path_to_uc/$parser_dir"
+    # $path_to_here/run_parser.sh $path_to_here "$path_to_uc/Parser"
     exitp=$?
     if [ $exitp -eq 0 ];
     then
@@ -72,9 +73,9 @@ fi
 if [ "$runsemantic" = true ];
 then
     echo "Give Semantic analysis directory"
-    # read -r sem_dir
-    # $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/$sem_dir"
-    $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
+    read -r sem_dir
+    $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/$sem_dir"
+    # $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
     exits=$?
     if [ $exits -eq 0 ];
     then
@@ -87,15 +88,15 @@ fi
 
 if [ "$runfull" = true ];
 then
-    echo "Give full compiler directory"
-    # read -r compiler_dir
-    # if [ $compiler_dir = "" ];
-    # then
-    #     $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc"
-    # else
-    #     $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/$compiler_dir"
-    # fi
-    $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
+    echo "Give compiler directory"
+    read -r compiler_dir
+    if [ $compiler_dir = "" ];
+    then
+        $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc"
+    else
+        $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/$compiler_dir"
+    fi
+    # $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
     exitf=$?
     if [ $exitf -eq 0 ];
     then
@@ -108,29 +109,32 @@ fi
 
 # these paths need to be fixed to run each compiler phase
 echo "Give Lexer directory"
-# read -r lexer_dir
-# $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/$lexer_dir"
-$path_to_here/run_lexer.sh $path_to_here "$path_to_uc/Lexer"
+read -r lexer_dir
+$path_to_here/run_lexer.sh $path_to_here "$path_to_uc/$lexer_dir"
+# $path_to_here/run_lexer.sh $path_to_here "$path_to_uc/Lexer"
 exitl=$?
+read -p "Press enter to continue"
 
 echo "Give Parser directory"
-# read -r parser_dir
-# $path_to_here/run_parser.sh $path_to_here "$path_to_uc/$parser_dir"
-$path_to_here/run_parser.sh $path_to_here "$path_to_uc/Parser"
+read -r parser_dir
+$path_to_here/run_parser.sh $path_to_here "$path_to_uc/$parser_dir"
+# $path_to_here/run_parser.sh $path_to_here "$path_to_uc/Parser"
 exitp=$?
+read -p "Press enter to continue"
 
 echo "Give Semantic analysis directory"
-# read -r sem_dir
-# $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/$sem_dir"
-$path_to_here/run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
+read -r sem_dir
+$path_to_here/run_semantic.sh $path_to_here "$path_to_uc/$sem_dir"
+# $path_to_here/run_semantic.sh $path_to_here "$path_to_uc/Sem_analysis"
 exits=$?
+read -p "Press enter to continue"
 
 echo "Give full compiler directory"
-# read -r compiler_dir
-# $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/$compiler_dir"
-$path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
+read -r compiler_dir
+$path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/$compiler_dir"
+# $path_to_here/run_full_compiler.sh $path_to_here "$path_to_uc/LLVM"
 exitf=$?
-
+read -p "Press enter to continue"
 
 echo ""
 echo "RESULTS"

@@ -24,7 +24,7 @@ the_args = sys.argv
 
 #compiler_to_test = sys.argv[1]
 path_to_here = sys.argv[1] + "/Full_compiler"
-correct_comp = sys.argv[2]
+# correct_comp = sys.argv[2]
 
 #list of all files in tests/ directory (only files)
 path_to_suite = sys.argv[1] + "/Testsuite"
@@ -32,14 +32,14 @@ path_to_correct = path_to_suite + "/Correct/"
 path_to_wrong = path_to_suite + "/Wrong/"
 path_to_output = path_to_suite + "/Correct_Output/"
 path_to_input = path_to_suite + "/Input"
-path_to_tested = sys.argv[4] + "/"
+path_to_tested = sys.argv[3] + "/"
 
 correct_tests = listdir(path_to_correct)
 wrong_tests = listdir(path_to_wrong)
 
 
 #read the name of the compiler executable from a text file
-check = int(sys.argv[3])
+check = int(sys.argv[2])
 if (check == 1):
     file_to_read = open(sys.argv[1] + "/EXECUTABLE", "r")
     compiler_to_test = (file_to_read.readline()).rstrip()

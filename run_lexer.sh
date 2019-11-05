@@ -21,6 +21,7 @@ fi
 
 correct_lex="$path_to_here/Lexer/dana"
 
+cd $path_to_uc
 
 if [ -s COMPILER ];
 then

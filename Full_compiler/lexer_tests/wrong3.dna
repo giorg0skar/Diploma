@@ -1,4 +1,0 @@
-def main is int
-    var x is int
-    x" := 1
-    return: 0

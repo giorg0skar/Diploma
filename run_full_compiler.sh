@@ -10,7 +10,7 @@ path_to_uc="$2"
 # path_to_here="/home/george/Documents/Diplomatiki/Diploma"
 
 # BUILD
-make -C $path_to_here/Full_compiler/
+#make -C $path_to_here/Full_compiler/
 make -C $path_to_uc
 
 correct_comp="$path_to_here/Full_compiler/danac"
@@ -25,13 +25,14 @@ then
     echo "$text" > EXECUTABLE
 fi
 
+cd $path_to_uc
 
 if [ -s EXECUTABLE ];
 then
-    $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_comp 1 $path_to_uc
+    $path_to_here/Full_compiler/compiler_tests.py $path_to_here 1 $path_to_uc
     exit_status=$?
 else
-    $path_to_here/Full_compiler/compiler_tests.py $path_to_here $correct_comp 0 $path_to_uc
+    $path_to_here/Full_compiler/compiler_tests.py $path_to_here 0 $path_to_uc
     exit_status=$?
 fi
 

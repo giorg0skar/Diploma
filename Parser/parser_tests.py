@@ -63,11 +63,11 @@ for test in correct_tests:
 
     val = x >> 8
     if (val == 1):
-        print("Errors were detected when none exist")
+        print(bcolors.WARNING + "Errors were detected when none exist" + bcolors.ENDC)
         wrong_cases += 1
         wrong_list.append(count)
     else:
-        print("No errors so syntax analysis finishes")
+        print(bcolors.OKGREEN + "No errors so syntax analysis finishes" + bcolors.ENDC)
         correct_cases += 1
     print("")
     count += 1
@@ -85,10 +85,10 @@ for test in wrong_tests:
 
     val = x >> 8
     if (val == 1):
-        print("Error caught")
+        print(bcolors.OKGREEN + "Error caught" + bcolors.ENDC)
         correct_cases += 1
     else:
-        print("Errors not detected when some exist")
+        print(bcolors.WARNING + "Errors not detected when some exist" + bcolors.ENDC)
         wrong_cases += 1
         wrong_list.append(count)
     print("")
